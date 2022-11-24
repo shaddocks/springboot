@@ -16,6 +16,7 @@ public class UserDaoImpl implements UserDao {
     public User getUser() {
         User user = new User();
         user.setName(name);
+        //throw new RuntimeException("error");
         return user;
     }
 }
