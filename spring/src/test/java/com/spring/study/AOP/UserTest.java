@@ -24,6 +24,7 @@ public class UserTest {
         System.out.println(userController.getUser());
     }
 
+
     @After
     public void testAfter() {
         ((AnnotationConfigApplicationContext) context).close();
