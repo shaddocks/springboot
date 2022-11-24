@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="user" class="com.spring.study.bean.User">
+        <property name="name" value="xu"/>
+        <property name="age" value="22"/>
+        <property name="gender" value="male"/>
+        <property name="hobbies">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="grades">
+            <map>
+                <entry key="1" value="1"/>
+                <entry key="2" value="2"/>
+                <entry key="3" value="3"/>
+            </map>
+        </property>
+        <property name="partner" ref="partner"/>
+    </bean>
+
+    <bean id="partner" class="com.spring.study.bean.Partner">
+        <property name="name" value="lulu"/>
+        <property name="age" value="25"/>
+        <property name="gender" value="female"/>
+    </bean>
+
+    <context:property-placeholder location="user.properties"/>
+</beans>
