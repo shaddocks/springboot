@@ -6,11 +6,13 @@ import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan(value = {"com.spring.study"})
 @PropertySource("classpath:user.properties")
 @EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableTransactionManagement
 public class JavaConfig {
 
     @Value("${mysql.username}")
@@ -51,6 +53,7 @@ public class JavaConfig {
         return new NamedParameterJdbcTemplate(druidDataSource);
     }
 
+    //配置事务管理器的bean
     @Bean
     public DataSourceTransactionManager dataSourceTransactionManager(DruidDataSource druidDataSource){
         return new DataSourceTransactionManager(druidDataSource);
