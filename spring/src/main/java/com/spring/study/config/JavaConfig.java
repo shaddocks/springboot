@@ -3,6 +3,9 @@ package com.spring.study.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
 @ComponentScan(value = {"com.spring.study"})
@@ -36,7 +39,7 @@ public class JavaConfig {
         return druidDataSource;
     }
 
-    /*@Bean
+    @Bean
     public JdbcTemplate jdbcTemplate(DruidDataSource druidDataSource){
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(druidDataSource);
@@ -51,5 +54,5 @@ public class JavaConfig {
     @Bean
     public DataSourceTransactionManager dataSourceTransactionManager(DruidDataSource druidDataSource){
         return new DataSourceTransactionManager(druidDataSource);
-    }*/
+    }
 }
