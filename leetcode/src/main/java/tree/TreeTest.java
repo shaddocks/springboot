@@ -188,5 +188,13 @@ public class TreeTest {
         return result;
     }
 
+    //222.完全二叉树的节点个数
+    public int countNodes(TreeNode root) {
+        int result = 0;
+        if (root == null) return result;
+
+        return 1;
+    }
+
     //8对称二叉树的迭代法，5二叉树的遍历通用写法
 }

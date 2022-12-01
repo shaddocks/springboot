@@ -31,8 +31,9 @@ Tomcat实际上运行JSP页面和Servlet。另外，Tomcat具有处理HTML页面
 可能遇到的问题
 - Java环境没有配置
 - 闪退问题，需要配置兼容性
-- 乱码问题，配置文件中设置
+- 乱码问题，配置文件中设置2
 
+## 2.3.3 配置
 在tomcat文件夹下conf中的server.xml配置文件中:
 - 可以配置启动的端口号, Connector port="8085"
 - 可以配置主机的名称, 默认的主机名: Host name="localhost"=127.0.0.1
@@ -50,3 +51,23 @@ appBase指的是虚拟主机的应用程序目录，可以是绝对路径，也�
 
 在windows系统下System32/drivers/etc/hosts文件中有域名解析
 
+## 2.3.4 发布一个网站
+1. 将自己写的网站放到服务器(tomcat)中指定的web应用的文件夹(webapps)下
+2. 网站应有的结构
+>--webapps: tomcat服务器的web目录
+> 
+>----ROOT: 自带的网站
+> 
+>----name: 网站的目录名
+> 
+>------index.html 默认的首页 (访问网站目录名时，会默认访问这个，如果没有则404)
+> 
+>------static(css, js, img...): 静态资源
+> 
+>------WEB-INF: 
+> 
+>--------classes: Java程序
+> 
+>--------lib: web应用所依赖的jar包
+> 
+>--------web.xml: 网站的配置文件
